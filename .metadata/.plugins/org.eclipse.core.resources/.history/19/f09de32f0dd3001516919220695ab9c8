@@ -1,0 +1,20 @@
+package com.tamark.projecteuler.q0003;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PrimeFactors {
+
+	public static void main(String[] args) {
+		long numberToFactor = Long.valueOf(args[0]);
+		List<Long> factors = determinePrimeFactors(numberToFactor);
+		System.out.println("Largest prime factor is:" + factors.get(factors.size()-1));
+	}
+
+	public static List<Long> determinePrimeFactors(long numberToFactor) {
+		List<Long> resultList = new ArrayList<>();
+		//TODO: code for factoring
+		return resultList;
+	}
+
+}

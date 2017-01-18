@@ -1,0 +1,23 @@
+package com.tamark.projecteuler.q0001;
+
+public class MultiplesOf3and5 {
+
+	public static void main(String[] args) {
+		int answer = aggregateMultiples(3, 10);
+		answer += aggregateMultiples(5, 10);
+		System.out.println("The answer is: " + answer);
+	}
+
+	private static int aggregateMultiples(int i, int j) {
+		int result = 0;
+		for (int j2 = 1; j2 <= j; j2++) {
+			double division = j2/i;
+			int truncated = j2/i;
+			if (division == truncated) {
+				result += j2;
+			}
+		}
+		return result;
+	}
+
+}

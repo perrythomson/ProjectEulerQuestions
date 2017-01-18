@@ -1,0 +1,101 @@
+package com.tamark.projecteuler.q0003;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+import java.util.List;
+
+import org.junit.Test;
+
+public class PrimeFactorsTest {
+
+	@Test
+	public void testDeterminePrimeFactors() {
+		Calendar start = new GregorianCalendar();
+		List<Long> factors = PrimeFactors.determinePrimeFactors(2);
+
+		Calendar end = new GregorianCalendar();
+		System.out.println("Time to factor \"2\" was:" + (end.getTimeInMillis() - start.getTimeInMillis()) + " ms");
+		List<Long> expectedFactors = buildExpectedFactors(1, 0, 0, 0, 0);
+		assertTrue("Lists of prime factors for \"2\" do not match", compareLists(expectedFactors, factors));
+
+		factors = PrimeFactors.determinePrimeFactors(3);
+		expectedFactors = buildExpectedFactors(0, 1, 0, 0, 0);
+		assertTrue("Lists of prime factors for \"3\" do not match", compareLists(expectedFactors, factors));
+
+		factors = PrimeFactors.determinePrimeFactors(4);
+		expectedFactors = buildExpectedFactors(2, 0, 0, 0, 0);
+		assertTrue("List of prime factors for \"4\" do not match", compareLists(expectedFactors, factors));
+
+		start = new GregorianCalendar();
+		factors = PrimeFactors.determinePrimeFactors(50);
+		end = new GregorianCalendar();
+		System.out.println("Time to factor \"50\" was:" + (end.getTimeInMillis() - start.getTimeInMillis()) + " ms");
+		expectedFactors = buildExpectedFactors(1, 0, 2, 0, 0);
+		assertTrue("List of prime factors for \"50\" do not match", compareLists(expectedFactors, factors));
+
+		factors = PrimeFactors.determinePrimeFactors(55);
+		expectedFactors = buildExpectedFactors(0, 0, 1, 0, 1);
+		assertTrue("List of prime factors for \"55\" do not match", compareLists(expectedFactors, factors));
+
+		start = new GregorianCalendar();
+		factors = PrimeFactors.determinePrimeFactors(2310);
+		end = new GregorianCalendar();
+		System.out.println("Time to factor \"2310\" was:" + (end.getTimeInMillis() - start.getTimeInMillis()) + " ms");
+		expectedFactors = buildExpectedFactors(1, 1, 1, 1, 1);
+		assertTrue("List of prime factors for \"2310\" do not match", compareLists(expectedFactors, factors));
+	}
+
+	private boolean compareLists(List<Long> expectedFactors, List<Long> actualFactors) {
+		if (expectedFactors.size() != actualFactors.size()) {
+			return false;
+		}
+		Iterator<Long> expecteds = expectedFactors.iterator();
+		for (Iterator iterator = actualFactors.iterator(); iterator.hasNext();) {
+			Long actual = (Long) iterator.next();
+			Long expected = (Long) expecteds.next();
+			if (expected.equals(actual) == false) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private List<Long> buildExpectedFactors(int twos, int threes, int fives, int sevens, int elevens) {
+		List<Long> resultList = new ArrayList<Long>();
+		resultList.add(new Long("1"));
+		resultList.addAll(generateFactors(new Long("2"), twos));
+		resultList.addAll(generateFactors(new Long("3"), threes));
+		resultList.addAll(generateFactors(new Long("5"), fives));
+		resultList.addAll(generateFactors(new Long("7"), sevens));
+		resultList.addAll(generateFactors(new Long("11"), elevens));
+		return resultList;
+	}
+
+	private Collection<? extends Long> generateFactors(Long primeFactorToAdd, int count) {
+		List<Long> resultList = new ArrayList<Long>();
+		for (int i = 0; i < count; i++) {
+			resultList.add(primeFactorToAdd);
+		}
+		return resultList;
+	}
+
+	@Test
+	public void testCompareLists() {
+		List<Long> list1 = buildExpectedFactors(1, 1, 1, 1, 1);
+		List<Long> list2 = buildExpectedFactors(1, 1, 1, 1, 1);
+		assertTrue("Sample prime factor lists did not match.", compareLists(list1, list2));
+		list1 = buildExpectedFactors(1, 0, 1, 0, 1);
+		list2 = buildExpectedFactors(0, 1, 0, 1, 0);
+		assertFalse("Sample mis-matched prime factor lists matched.", compareLists(list1, list2));
+		list1 = buildExpectedFactors(2, 0, 1, 0, 1);
+		list2 = buildExpectedFactors(2, 0, 1, 0, 1);
+		assertTrue("Sample prime factor lists did not match.", compareLists(list1, list2));
+	}
+
+}

@@ -1,0 +1,34 @@
+package com.tamark.projecteuler.q0003;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.junit.Test;
+
+public class PrimeFactorsTest {
+
+	@Test
+	public void testDeterminePrimeFactors() {
+		List<Long> factors = PrimeFactors.determinePrimeFactors(2);
+		List<Long> expectedFactors = buildExpectedFactors(1, 1, 1, 1, 1);
+		assertTrue("List of prime factors does not match", compareLists(expectedFactors, factors));
+	}
+
+	private List<Long> buildExpectedFactors(int twos, int threes, int fives, int sevens, int elevens) {
+		List<Long> resultList = new ArrayList<Long>();
+		resultList.addAll(generateFactors(new Long("2"), twos));
+		return resultList;
+	}
+
+	private Collection<? extends Long> generateFactors(Long primeFactorToAdd, int count) {
+		List<Long> resultList = new ArrayList<Long>();
+		for (int i = 0; i < count; i++) {
+			resultList.add(primeFactorToAdd);
+		}
+		return resultList;
+	}
+
+}

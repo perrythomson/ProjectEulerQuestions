@@ -1,0 +1,5 @@
+package com.tamarkdesigns.misc;
+
+public interface MyIface {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;PrimeFactorsTest.java&apos; to &apos;Q003-PrimeFactors/src/test.com.tamark.projecteuler.q0003&apos;&#x0A;- Original project: &apos;Q003-PrimeFactors&apos;&#x0A;- Destination element: &apos;Q003-PrimeFactors/src/test.com.tamark.projecteuler.q0003&apos;&#x0A;- Original element: &apos;com.tamark.projecteuler.q0003.PrimeFactorsTest.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;test.com.tamark.projecteuler.q0003" element1="/src&lt;com.tamark.projecteuler.q0003{PrimeFactorsTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1456394389706" units="1" version="1.0"/>
+</session>

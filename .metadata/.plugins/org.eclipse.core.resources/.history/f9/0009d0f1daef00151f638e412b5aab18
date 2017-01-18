@@ -1,0 +1,10 @@
+package com.tamarkdesigns.misc;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		B c = new C();
+		System.out.println(c.max(10, 20));
+	}
+	
+}

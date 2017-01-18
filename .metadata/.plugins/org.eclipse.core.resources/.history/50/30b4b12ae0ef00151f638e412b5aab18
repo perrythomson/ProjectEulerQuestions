@@ -1,0 +1,9 @@
+package com.tamarkdesigns.misc;
+
+public class C extends B {
+
+	public int max(int x, int y) {
+		return super.max(2*x,  2*y);
+	}
+
+}

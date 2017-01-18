@@ -1,0 +1,16 @@
+package com.tamark.projecteuler.q0003;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.Test;
+
+public class PrimeFactorsTest {
+
+	@Test
+	public void testDeterminePrimeFactors() {
+		List<Long> factors = PrimeFactors.determinePrimeFactors(2);
+	}
+
+}

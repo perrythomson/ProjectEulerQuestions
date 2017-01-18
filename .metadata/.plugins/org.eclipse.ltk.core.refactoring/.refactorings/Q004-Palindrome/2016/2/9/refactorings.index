@@ -1,0 +1,5 @@
+1456394403611	Delete element
+1456403177844	Extract local variable 'returnValue'
+1456403477963	Extract local variable 'startValue'
+1456403877620	Extract method 'calculateFactors'
+1456404013848	Extract method 'findLargestPalindrome'

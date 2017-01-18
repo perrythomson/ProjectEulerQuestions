@@ -1,0 +1,38 @@
+package com.tamarkdesigns.misc;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		B c = new C();
+		System.out.println(c.max(10, 20));
+		question02(true, true);
+		question02(true, false);
+		question02(false, true);
+		question02(false, false);
+	}
+
+	public static void question02(boolean a, boolean b) {
+		if (a == true) {
+			System.out.println("A");
+		} else if (a == true && b == true) {
+			System.out.println("A&&B");
+		} else {
+			if (b == false) {
+				System.out.println("notB");
+			} else {
+				System.out.println("ELSE");
+			}
+		}
+	}
+
+	public void question11() {
+		MIA a = new MIA();
+		MIB b = new MIB();
+		MIC c = new MIC();
+		b = c;
+		c = b;
+		MyIface i = c;
+		c = (MIC) b;
+		b = a;
+	}
+}

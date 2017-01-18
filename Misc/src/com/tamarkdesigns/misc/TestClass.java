@@ -1,0 +1,26 @@
+package com.tamarkdesigns.misc;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		question02(true, true);
+		question02(true, false);
+		question02(false, true);
+		question02(false, false);
+	}
+
+	public static void question02(boolean a, boolean b) {
+		if (a == true) {
+			System.out.println("A");
+		} else if (a == true && b == true) {
+			System.out.println("A&&B");
+		} else {
+			if (b == false) {
+				System.out.println("notB");
+			} else {
+				System.out.println("ELSE");
+			}
+		}
+	}
+	
+}

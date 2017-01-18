@@ -1,0 +1,9 @@
+package com.tamarkdesigns.misc;
+
+public class A {
+
+	public int max(int x, int y) {
+		if(x>y) return x; else return y;
+	}
+
+}

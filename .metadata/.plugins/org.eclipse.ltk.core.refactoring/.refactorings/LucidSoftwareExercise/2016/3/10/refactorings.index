@@ -1,0 +1,20 @@
+1456798969694	Rename local variable 'r'
+1456798977725	Rename local variable 'c'
+1456803988971	Rename method 'determineMaxSequenceLength'
+1456812754188	Rename local variable 'currentSequence'
+1456812795432	Rename local variable 'newSequence'
+1456813079178	Extract method 'calculateSequenceLength'
+1456813456160	Delete elements
+1456813631260	Move compilation unit
+1456816163689	Copy compilation unit
+1456816192304	Copy compilation unit
+1456818893489	Rename field 'col'
+1456818945911	Rename method 'determineCellOptions'
+1456819191270	Rename method 'calculateSequenceLength'
+1456819251688	Copy compilation unit
+1456819933359	Rename method 'determineCellOptions'
+1456819983095	Infer generic type arguments
+1456820087783	Infer generic type arguments
+1456820605969	Rename type 'NonDecendingCell'
+1456820735084	Rename method 'calculateSequenceLength'
+1456820800847	Rename method 'determineMaxSequenceString'

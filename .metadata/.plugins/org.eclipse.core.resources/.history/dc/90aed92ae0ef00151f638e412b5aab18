@@ -1,0 +1,5 @@
+package com.tamarkdesigns.misc;
+
+public class MIB extends MIA implements MyIface {
+
+}
